@@ -9,6 +9,25 @@ TEST_CASE("A new stack is empty", "[stack]") {
     REQUIRE(tester.full() == false);
 }
 
+TEST_CASE("A new stack is full", "[stack]") {
+    stack tester;
+
+    REQUIRE(tester.full() == false);
+    REQUIRE(tester.push(0) == true);
+    REQUIRE(tester.push(1) == true);
+    REQUIRE(tester.push(2) == true);
+    REQUIRE(tester.push(3) == true);
+    REQUIRE(tester.push(4) == true);
+    REQUIRE(tester.push(5) == true);
+    REQUIRE(tester.push(6) == true);
+    REQUIRE(tester.push(7) == true);
+    REQUIRE(tester.push(8) == true);
+    REQUIRE(tester.push(9) == true);
+    REQUIRE(tester.full() == true);
+
+
+}
+
 TEST_CASE("Pushing to stack", "[stack]") {
     stack tester;
 
@@ -50,6 +69,7 @@ TEST_CASE("Popping from stack", "[stack]") {
     REQUIRE(tester.push(2) == true);
     REQUIRE(tester.push(3) == true);
     REQUIRE(tester.push(4) == true);
+    (tester.pop());
     (tester.pop());
     (tester.pop());
     (tester.pop());

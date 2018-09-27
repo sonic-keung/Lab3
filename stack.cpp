@@ -1,6 +1,8 @@
 #include <iostream>
 #include "stack.hpp"
 
+constexpr int MAXSTACK = 9;
+
 // push to stack if stack is not full
 bool stack::push(int pushInt) {
     if (!full()) {
@@ -41,7 +43,7 @@ bool stack::empty() const {
 
 // return true if full, otherwise false
 bool stack::full() const {
-    if (topStack == 9) {
+    if (topStack == MAXSTACK) {
         return true;
     } else {
         return false;
