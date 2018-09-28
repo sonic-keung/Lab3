@@ -51,10 +51,14 @@ bool stack::full() const {
 }
 
 // display stack
-void stack::print() const {
+std::string stack::print() const {
+    std::string str = "";
+
     if (!empty()) {
         for (int i = topStack; i >= 0; i--) {
+            str += std::to_string(maxArraySize[i]);
             std::cout << maxArraySize[i] << " " << std::endl;
         }
     }
+    return str;
 }

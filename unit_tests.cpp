@@ -23,7 +23,9 @@ TEST_CASE("A new stack is full", "[stack]") {
     REQUIRE(tester.push(7) == true);
     REQUIRE(tester.push(8) == true);
     REQUIRE(tester.push(9) == true);
+    REQUIRE(tester.push(10) == false);
     REQUIRE(tester.full() == true);
+    (tester.print());
 
 
 }
@@ -81,5 +83,8 @@ TEST_CASE("Popping from stack", "[stack]") {
 TEST_CASE("Printing stack", "[stack]") {
     stack tester;
 
+    REQUIRE(tester.push(1) == true);
+    REQUIRE(tester.push(2) == true);
     (tester.print());
+    (tester.print().compare("1 2") == 0);
 }

@@ -23,6 +23,6 @@ struct stack {
         // true if stack is full
         bool full() const;
         // print stack
-        void print() const;
+        std::string print() const;
 
 };
